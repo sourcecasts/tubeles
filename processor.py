@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QObject
 from pytube import YouTube
 from pytube import Stream
+import youtube_dl
 import os
 
 class Processor(QObject):    # Main Processor check proxy...
@@ -18,16 +20,35 @@ class Processor(QObject):    # Main Processor check proxy...
 
                 
     def running(self):
-    
-        meta = YouTube(self.url)
-        self.length.emit(meta.title, meta.description, meta.thumbnail_url)
-        print(meta.title)
+        dl = youtube_dl.YoutubeDL()
+        result = dl.extract_info(self.url, download=False)
+        if 'entries' in result:
+            video = result['entries'][0]
+        else:
+            video = result
+
+        video_title = video['title']
+        video_description = video['description']
+        video_thumbnail = video['thumbnail']
+        video_url = video['webpage_url']
+
+        self.length.emit(video_title, video_description, video_thumbnail)
+        print(video_thumbnail)
+
 
     def download(self):
-    
-        dl = YouTube(self.url, on_progress_callback = self.on_progress)
-        dl = dl.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()       
-        dl.download(self.path)
+        dl_options = {'outtmpl': self.path + "/" + "video.mp4", 'progress_hooks': [self.progress]}
+        with youtube_dl.YoutubeDL(dl_options) as dl:
+            dl.download([self.url])
+
+
+    def progress(self, percent):
+        if percent['status'] == 'downloading':
+            result = round(percent['downloaded_bytes'] / percent['total_bytes'] * 100, 1)
+
+            print(round(percent['downloaded_bytes'] / percent['total_bytes'] * 100, 1))
+            self.receiv.emit(result)
+
 
            
     def on_progress(self, stream: Stream, chunk: bytes, bytes_remaining: int) -> None:
