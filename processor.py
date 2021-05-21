@@ -12,9 +12,10 @@ class Processor(QObject):    # Main Processor check proxy...
     length = QtCore.pyqtSignal(str, str, str)
     receiv = QtCore.pyqtSignal(int)
 
-    def __init__(self, url = None, path = None):    # Main Processor check proxy...
+    def __init__(self, title = None, url = None, path = None):    # Main Processor check proxy...
         super().__init__()
-                 
+        
+        self.title = title
         self.url = url
         self.path = path
 
@@ -37,7 +38,7 @@ class Processor(QObject):    # Main Processor check proxy...
 
 
     def download(self):
-        dl_options = {'outtmpl': self.path + "/" + "video.mp4", 'progress_hooks': [self.progress]}
+        dl_options = {'format': 'best', 'outtmpl': self.path + "/" + self.title + ".mp4", 'progress_hooks': [self.progress]}
         with youtube_dl.YoutubeDL(dl_options) as dl:
             dl.download([self.url])
 

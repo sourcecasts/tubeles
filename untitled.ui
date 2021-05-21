@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>649</width>
-    <height>440</height>
+    <height>410</height>
    </rect>
   </property>
   <property name="tabletTracking">
@@ -24,7 +24,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>check.png</normaloff>check.png</iconset>
+    <normaloff>img/check.png</normaloff>img/check.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -97,6 +97,11 @@
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid #edeef0;
+padding-left: 4px;
+border-radius: 4px;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -156,10 +161,16 @@
       <property name="font">
        <font>
         <family>MS Shell Dlg 2</family>
-        <pointsize>8</pointsize>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #065fd4;
+border-radius:4px;
+border-color: #065fd4;
+color: #ffffff;</string>
       </property>
       <property name="text">
        <string>Проверить</string>
@@ -181,7 +192,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>320</y>
+        <y>301</y>
         <width>110</width>
         <height>25</height>
        </rect>
@@ -193,6 +204,12 @@
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #ff0000;
+border-radius:4px;
+border-color: #ff0000;
+color: #ffffff;</string>
       </property>
       <property name="text">
        <string>Скачать</string>
@@ -214,7 +231,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>80</y>
+        <y>60</y>
         <width>591</width>
         <height>23</height>
        </rect>
@@ -239,6 +256,11 @@
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid #edeef0;
+padding-left: 4px;
+border-radius: 4px;</string>
       </property>
       <property name="text">
        <string/>
@@ -277,20 +299,28 @@
         <x>10</x>
         <y>50</y>
         <width>612</width>
-        <height>221</height>
+        <height>201</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:4px;</string>
+      </property>
       <property name="title">
-       <string>Информация</string>
+       <string/>
       </property>
       <widget class="QTextEdit" name="text_desc">
        <property name="geometry">
         <rect>
          <x>260</x>
-         <y>70</y>
+         <y>50</y>
          <width>341</width>
          <height>131</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #edeef0;
+padding-left: 4px;
+border-radius: 4px;</string>
        </property>
        <property name="placeholderText">
         <string/>
@@ -300,7 +330,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>69</y>
+         <y>49</y>
          <width>231</width>
          <height>131</height>
         </rect>
@@ -312,7 +342,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>preview.png</pixmap>
+        <pixmap>img/preview.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -328,7 +358,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>70</y>
+         <y>49</y>
          <width>231</width>
          <height>131</height>
         </rect>
@@ -350,8 +380,8 @@
        </property>
       </widget>
       <zorder>label</zorder>
-      <zorder>label_prew</zorder>
       <zorder>text_desc</zorder>
+      <zorder>label_prew</zorder>
      </widget>
      <widget class="QPushButton" name="btn_select">
       <property name="enabled">
@@ -360,7 +390,7 @@
       <property name="geometry">
        <rect>
         <x>510</x>
-        <y>279</y>
+        <y>260</y>
         <width>111</width>
         <height>24</height>
        </rect>
@@ -368,10 +398,16 @@
       <property name="font">
        <font>
         <family>MS Shell Dlg 2</family>
-        <pointsize>8</pointsize>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #065fd4;
+border-radius:4px;
+border-color: #065fd4;
+color: #ffffff;</string>
       </property>
       <property name="text">
        <string>Выбрать</string>
@@ -390,7 +426,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>280</y>
+        <y>261</y>
         <width>91</width>
         <height>21</height>
        </rect>
@@ -406,7 +442,7 @@
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>280</y>
+        <y>261</y>
         <width>411</width>
         <height>23</height>
        </rect>
@@ -431,6 +467,11 @@
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid #edeef0;
+padding-left: 4px;
+border-radius: 4px;</string>
       </property>
       <property name="text">
        <string/>
@@ -467,7 +508,7 @@
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>320</y>
+        <y>301</y>
         <width>491</width>
         <height>23</height>
        </rect>

@@ -33,19 +33,19 @@ class ExampleApp(QtWidgets.QMainWindow, untitled.Ui_MainWindow):
 
 
     def check(self):    # Start check video metod...
-
+        self.title = self.line_title.text()
         self.url = self.line_url.text()
         self.path = self.line_save.text()
-        self.th = Processor(self.url, self.path)
+        self.th = Processor(self.title, self.url, self.path)
         threading.Thread(target = self.th.running).start()
         self.th.length.connect(self.append)
 
 
     def download(self):    # Start download video metod...
-
+        self.title = self.line_title.text()
         self.url = self.line_url.text()
         self.path = self.line_save.text()
-        self.th = Processor(self.url, self.path)
+        self.th = Processor(self.title, self.url, self.path)
         threading.Thread(target = self.th.download).start()
         self.th.receiv.connect(self.progress)
 

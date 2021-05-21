@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\Скрипт\Desktop\Download\untitled.ui'
+# Form implementation generated from reading ui file 'C:\Users\Root\Desktop\tubeles-main\untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -15,11 +15,11 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(649, 440)
+        MainWindow.resize(649, 410)
         MainWindow.setTabletTracking(False)
         MainWindow.setAcceptDrops(False)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Скрипт\\Desktop\\Download\\check.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Root\\Desktop\\tubeles-main\\img/check.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setIconSize(QtCore.QSize(256, 256))
@@ -50,6 +50,9 @@ class Ui_MainWindow(object):
         self.line_url.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.line_url.setAcceptDrops(True)
         self.line_url.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.line_url.setStyleSheet("border: 1px solid #edeef0;\n"
+"padding-left: 4px;\n"
+"border-radius: 4px;")
         self.line_url.setText("")
         self.line_url.setMaxLength(100)
         self.line_url.setFrame(True)
@@ -68,28 +71,36 @@ class Ui_MainWindow(object):
         self.btn_check.setGeometry(QtCore.QRect(510, 10, 111, 24))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
-        font.setPointSize(8)
+        font.setPointSize(9)
         font.setBold(False)
         font.setWeight(50)
         self.btn_check.setFont(font)
+        self.btn_check.setStyleSheet("background-color: #065fd4;\n"
+"border-radius:4px;\n"
+"border-color: #065fd4;\n"
+"color: #ffffff;")
         self.btn_check.setIconSize(QtCore.QSize(128, 128))
         self.btn_check.setFlat(False)
         self.btn_check.setObjectName("btn_check")
         self.btn_download = QtWidgets.QPushButton(self.tab_3)
         self.btn_download.setEnabled(True)
-        self.btn_download.setGeometry(QtCore.QRect(10, 320, 110, 25))
+        self.btn_download.setGeometry(QtCore.QRect(10, 301, 110, 25))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(8)
         font.setBold(False)
         font.setWeight(50)
         self.btn_download.setFont(font)
+        self.btn_download.setStyleSheet("background-color: #ff0000;\n"
+"border-radius:4px;\n"
+"border-color: #ff0000;\n"
+"color: #ffffff;")
         self.btn_download.setIconSize(QtCore.QSize(128, 128))
         self.btn_download.setFlat(False)
         self.btn_download.setObjectName("btn_download")
         self.line_title = QtWidgets.QLineEdit(self.tab_3)
         self.line_title.setEnabled(True)
-        self.line_title.setGeometry(QtCore.QRect(20, 80, 591, 23))
+        self.line_title.setGeometry(QtCore.QRect(20, 60, 591, 23))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(False)
@@ -103,6 +114,9 @@ class Ui_MainWindow(object):
         self.line_title.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.line_title.setAcceptDrops(True)
         self.line_title.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.line_title.setStyleSheet("border: 1px solid #edeef0;\n"
+"padding-left: 4px;\n"
+"border-radius: 4px;")
         self.line_title.setText("")
         self.line_title.setMaxLength(100)
         self.line_title.setFrame(True)
@@ -115,23 +129,28 @@ class Ui_MainWindow(object):
         self.line_title.setClearButtonEnabled(False)
         self.line_title.setObjectName("line_title")
         self.groupBox = QtWidgets.QGroupBox(self.tab_3)
-        self.groupBox.setGeometry(QtCore.QRect(10, 50, 612, 221))
+        self.groupBox.setGeometry(QtCore.QRect(10, 50, 612, 201))
+        self.groupBox.setStyleSheet("border-radius:4px;")
+        self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.text_desc = QtWidgets.QTextEdit(self.groupBox)
-        self.text_desc.setGeometry(QtCore.QRect(260, 70, 341, 131))
+        self.text_desc.setGeometry(QtCore.QRect(260, 50, 341, 131))
+        self.text_desc.setStyleSheet("border: 1px solid #edeef0;\n"
+"padding-left: 4px;\n"
+"border-radius: 4px;")
         self.text_desc.setPlaceholderText("")
         self.text_desc.setObjectName("text_desc")
         self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setGeometry(QtCore.QRect(10, 69, 231, 131))
+        self.label.setGeometry(QtCore.QRect(10, 49, 231, 131))
         self.label.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\Скрипт\\Desktop\\Download\\preview.png"))
+        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\Root\\Desktop\\tubeles-main\\img/preview.png"))
         self.label.setScaledContents(False)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setWordWrap(True)
         self.label.setObjectName("label")
         self.label_prew = QtWidgets.QLabel(self.groupBox)
-        self.label_prew.setGeometry(QtCore.QRect(10, 70, 231, 131))
+        self.label_prew.setGeometry(QtCore.QRect(10, 49, 231, 131))
         self.label_prew.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_prew.setText("")
         self.label_prew.setScaledContents(True)
@@ -139,26 +158,30 @@ class Ui_MainWindow(object):
         self.label_prew.setWordWrap(False)
         self.label_prew.setObjectName("label_prew")
         self.label.raise_()
-        self.label_prew.raise_()
         self.text_desc.raise_()
+        self.label_prew.raise_()
         self.btn_select = QtWidgets.QPushButton(self.tab_3)
         self.btn_select.setEnabled(True)
-        self.btn_select.setGeometry(QtCore.QRect(510, 279, 111, 24))
+        self.btn_select.setGeometry(QtCore.QRect(510, 260, 111, 24))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
-        font.setPointSize(8)
+        font.setPointSize(9)
         font.setBold(False)
         font.setWeight(50)
         self.btn_select.setFont(font)
+        self.btn_select.setStyleSheet("background-color: #065fd4;\n"
+"border-radius:4px;\n"
+"border-color: #065fd4;\n"
+"color: #ffffff;")
         self.btn_select.setIconSize(QtCore.QSize(128, 128))
         self.btn_select.setFlat(False)
         self.btn_select.setObjectName("btn_select")
         self.label_4 = QtWidgets.QLabel(self.tab_3)
-        self.label_4.setGeometry(QtCore.QRect(10, 280, 91, 21))
+        self.label_4.setGeometry(QtCore.QRect(10, 261, 91, 21))
         self.label_4.setObjectName("label_4")
         self.line_save = QtWidgets.QLineEdit(self.tab_3)
         self.line_save.setEnabled(True)
-        self.line_save.setGeometry(QtCore.QRect(90, 280, 411, 23))
+        self.line_save.setGeometry(QtCore.QRect(90, 261, 411, 23))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(False)
@@ -172,6 +195,9 @@ class Ui_MainWindow(object):
         self.line_save.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.line_save.setAcceptDrops(True)
         self.line_save.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.line_save.setStyleSheet("border: 1px solid #edeef0;\n"
+"padding-left: 4px;\n"
+"border-radius: 4px;")
         self.line_save.setText("")
         self.line_save.setMaxLength(100)
         self.line_save.setFrame(True)
@@ -183,7 +209,7 @@ class Ui_MainWindow(object):
         self.line_save.setClearButtonEnabled(False)
         self.line_save.setObjectName("line_save")
         self.progressBar = QtWidgets.QProgressBar(self.tab_3)
-        self.progressBar.setGeometry(QtCore.QRect(130, 320, 491, 23))
+        self.progressBar.setGeometry(QtCore.QRect(130, 301, 491, 23))
         self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.groupBox.raise_()
@@ -217,7 +243,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Ссылка на видео"))
         self.btn_check.setText(_translate("MainWindow", "Проверить"))
         self.btn_download.setText(_translate("MainWindow", "Скачать"))
-        self.groupBox.setTitle(_translate("MainWindow", "Информация"))
         self.btn_select.setText(_translate("MainWindow", "Выбрать"))
         self.label_4.setText(_translate("MainWindow", "Сохранить в"))
         self.line_save.setPlaceholderText(_translate("MainWindow", " Укажите каталог для сохранения"))
