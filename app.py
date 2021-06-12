@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QObject
+from PyQt5.QtCore import QObject, Qt
 from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtWidgets import QMessageBox
 import threading 
 from processor import Processor
 import threading
@@ -51,18 +52,29 @@ class ExampleApp(QtWidgets.QMainWindow, untitled.Ui_MainWindow):
 
     
     def append(self, title, description, thumbnail):    # Start stream metod...
-        self.line_title.setText(title)
-        self.text_desc.setPlainText(description) 
-        image = QImage()
-        image.loadFromData(requests.get(thumbnail).content)
-        self.label_prew.setPixmap(QPixmap(image))
-        self.label_prew.show()
 
+        if title != "":
+            self.line_title.setText(title)
+            self.text_desc.setPlainText(description) 
+            image = QImage()
+            image.loadFromData(requests.get(thumbnail).content)
+            self.label_prew.setPixmap(QPixmap(image))
+            self.label_prew.show()
+        else:
+            self.msg()
+       
 
     def progress(self, size):    # Progress bar metod...
         self.progressBar.setValue(size)
-      
-
+    
+    def msg(self):    # Message metod...
+        dialog = QMessageBox()
+        dialog.setText("Проверьте правильность ссылки!")
+        dialog.setInformativeText("<i>Скопируйте ссылку на видео из строки браузера...</i>")
+        dialog.setWindowTitle("Видео недоступно")
+        dialog.setStandardButtons(QMessageBox.Cancel)
+        dialog.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowTitleHint)
+        dialog.exec_()
 
 
 def main():

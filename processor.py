@@ -22,20 +22,24 @@ class Processor(QObject):    # Main Processor check proxy...
                 
     def running(self):
         dl = youtube_dl.YoutubeDL()
-        result = dl.extract_info(self.url, download=False)
-        if 'entries' in result:
-            video = result['entries'][0]
-        else:
-            video = result
+        try:
+            result = dl.extract_info(self.url, download=False)
 
-        video_title = video['title']
-        video_description = video['description']
-        video_thumbnail = video['thumbnail']
-        video_url = video['webpage_url']
+            if 'entries' in result:
+                video = result['entries'][0]
+            else:
+                video = result
 
-        self.length.emit(video_title, video_description, video_thumbnail)
-        print(video_thumbnail)
+            video_title = video['title']
+            video_description = video['description']
+            video_thumbnail = video['thumbnail']
+            video_url = video['webpage_url']
 
+            self.length.emit(video_title, video_description, video_thumbnail)
+            print(video_thumbnail)
+        except Exception as error:
+            self.length.emit(None, None, None)
+            print(error)
 
     def download(self):
         dl_options = {'format': 'best', 'outtmpl': self.path + "/" + self.title + ".mp4", 'progress_hooks': [self.progress]}
